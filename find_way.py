@@ -1,7 +1,7 @@
-map=[" OOOO",
-    " OOOO",
-    " OOOO",
-    "  OOO",
+map=[" oooo",
+    " oooo",
+    " oooo",
+    "  ooo",
     "     ",]
 
 def find_way(map,start,end,way=[],):
@@ -10,11 +10,11 @@ def find_way(map,start,end,way=[],):
             return []
         if map[start[0]][start[1]] in "oO":
             return []
-        if start==end:
-            return [way+[end]]
         if start in way:
             return []
     except:
         return []
+    if start==end:
+            return [way+[end]]
     return find_way(map,[start[0]+1,start[1]],end,way=way+[start])+find_way(map,[start[0],start[1]+1],end,way=way+[start])+find_way(map,[start[0]-1,start[1]],end,way=way+[start])+find_way(map,[start[0],start[1]-1],end,way=way+[start])
 print(find_way(map,[0,0],[4,4]))
