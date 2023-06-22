@@ -18,7 +18,7 @@ def print_way(mapp,way,one_by_one=False):#从这里开始都是辅助代码
         for i in way:
             os.system('clear' if os.name=='posix' else 'cls')
             print_way(mapp,[i])
-            time.sleep(0.05)
+            time.sleep(0.1)
         time.sleep(2)
         return
     for i in range(len(mapp)):
@@ -38,8 +38,8 @@ def print_mapp(mapp,width,pots=[]):
             else:
                 print(mapp[i][j],end=" ")
         print()
-    print(" "*(len(str(len(mapp)))+1)+"-"*(len(mapp[0])*2))
-    for i in range(len(str(len(mapp)))):
+    print(" "*(len(str(len(mapp)))+1)+"-"*(width*2))
+    for i in range(len(str(width))):
         print(" "*(len(str(len(mapp)))+2),end="")
         for j in range(width):
             try:
