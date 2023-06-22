@@ -1,5 +1,5 @@
 import os
-def find_way(mapp,start,end,way=[],):
+def find_way(mapp,start,end,way=[],):#核心代码，只有13行
     try:
         if start[0]<0 or start[1]<0:
             return []
@@ -12,7 +12,7 @@ def find_way(mapp,start,end,way=[],):
     if start==end:
             return [way+[end]]
     return find_way(mapp,[start[0]+1,start[1]],end,way=way+[start])+find_way(mapp,[start[0],start[1]+1],end,way=way+[start])+find_way(mapp,[start[0]-1,start[1]],end,way=way+[start])+find_way(mapp,[start[0],start[1]-1],end,way=way+[start])
-def print_way(mapp,way,one_by_one=False):
+def print_way(mapp,way,one_by_one=False):#从这里开始都是辅助代码
     import time
     if one_by_one==1:
         for i in way:
